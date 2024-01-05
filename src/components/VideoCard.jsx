@@ -1,9 +1,18 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function VideoCard({ video }) {
+  const navigate = useNavigate();
   const { title, channelTitle, publishedAt, thumbnails } = video.snippet;
+  const handleClickVideoCard = () => {
+    navigate(`/videos/${video.id}`);
+  };
+
   return (
-    <article className="relative min-w-full min-h-[380px] md:min-h-[320px] lg:min-h-[280px] border-[1px]">
+    <article
+      onClick={handleClickVideoCard}
+      className="relative min-w-full cursor-pointer min-h-[380px] md:min-h-[320px] lg:min-h-[280px] border-[1px]"
+    >
       <div>
         <img className="m-auto min-w-full" src={thumbnails.medium.url} />
       </div>

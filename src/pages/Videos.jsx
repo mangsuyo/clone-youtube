@@ -24,7 +24,7 @@ export default function Videos() {
 
   return (
     <section className="grid gap-2 grid-cols-1 justify-items-center md:grid-cols-2 lg:grid-cols-4 2xl:grid-cols-5">
-      {data && data.map((video) => <VideoCard video={video} />)}
+      {data && data.map((video) => <VideoCard key={video.id} video={video} />)}
     </section>
   );
 }
