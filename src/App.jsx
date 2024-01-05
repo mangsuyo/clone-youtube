@@ -1,6 +1,7 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Root from "./pages/Root";
+import Videos from "./pages/Videos";
 
 const router = createBrowserRouter([
   {
@@ -10,11 +11,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <div>This is default Component</div>,
-      },
-      {
-        path: "/videos",
-        element: <div>This is video Page</div>,
+        element: <Videos />,
       },
     ],
   },
