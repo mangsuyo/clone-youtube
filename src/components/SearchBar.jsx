@@ -12,7 +12,7 @@ export default function SearchBar({ handleSetKeyWord }) {
     handleSetKeyWord(text);
   };
   return (
-    <header className="px-[10%] py-[1%]">
+    <header className="px-[10%] py-[2%] mb-5">
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           <img src="images/youtube-logo.avif" className="w-12 h-12 mr-2" />
@@ -29,8 +29,8 @@ export default function SearchBar({ handleSetKeyWord }) {
             value={text}
             onChange={handleSearchInputChange}
           />
-          <button className="w-[10%]">
-            <CiSearch className="text-2xl" />
+          <button className="w-[10%] flex justify-end">
+            <CiSearch className="text-2xl mr-4" />
           </button>
         </form>
       </div>
