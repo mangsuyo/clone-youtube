@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
+import { Link } from "react-router-dom";
 
 export default function SearchBar({ handleSetKeyWord }) {
   const [text, setText] = useState("");
@@ -16,7 +17,9 @@ export default function SearchBar({ handleSetKeyWord }) {
       <div className="flex justify-between items-center">
         <div className="flex items-center">
           <img src="images/youtube-logo.avif" className="w-12 h-12 mr-2" />
-          <h1 className="text-xl font-medium">Youtube</h1>
+          <h1 className="text-xl font-medium cursor-pointer">
+            <Link to="/">Youtube</Link>
+          </h1>
         </div>
         <form
           className="w-[70%] flex items-center border-2"

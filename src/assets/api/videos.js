@@ -9,3 +9,9 @@ export const getMostPopularVidoes = async () => {
   });
   return data;
 };
+
+export const getVideoDetails = async (videoId) => {
+  const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${PRIVATE_KEY}`;
+  const data = await axios.get(url).then((response) => response.data);
+  return data;
+};
