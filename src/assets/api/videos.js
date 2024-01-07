@@ -15,3 +15,9 @@ export const getVideoDetails = async (videoId) => {
   const data = await axios.get(url).then((response) => response.data);
   return data;
 };
+
+export const getVideoByKeyword = async (keyword) => {
+  const url = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${keyword}&key=${PRIVATE_KEY}`;
+  const data = await axios.get(url).then((response) => response.data);
+  return data;
+};

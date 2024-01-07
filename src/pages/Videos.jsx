@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { getMostPopularVidoes } from "../assets/api/videos";
 import VideoCard from "../components/VideoCard";
 
 export default function Videos() {
   const [data, setData] = useState();
-
   const fetchVideos = async () => {
     try {
       const videos = await getMostPopularVidoes();

@@ -3,7 +3,6 @@ import { useState } from "react";
 import ChannelThumbnail from "./ChannelThumbnail";
 
 export default function VideoDetailCard({ videoDetail }) {
-  console.log(videoDetail);
   const [isClicked, setIsClicked] = useState(false);
   const videoId = videoDetail.items[0].id;
   const { channelId, channelTitle, title, description, publishedAt } =
