@@ -16,6 +16,9 @@ export default function SearchVideosPage() {
     fetchVideoByKeyword(params.keyword);
   }, []);
   return (
-    <div>{data && data.items.map((video) => <VideoCard video={video} />)}</div>
+    <div>
+      {data &&
+        data.items.map((video) => <VideoCard video={video} keyword={true} />)}
+    </div>
   );
 }
