@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
 import { Link, useParams } from "react-router-dom";
+import { BsYoutube } from "react-icons/bs";
 
 export default function SearchBar({ handleSetKeyWord }) {
   const [text, setText] = useState("");
@@ -21,9 +22,9 @@ export default function SearchBar({ handleSetKeyWord }) {
   }, [keyword]);
   return (
     <header className="px-[10%] py-[2%] mb-5">
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center border-bottom-[1px]">
         <div className="flex items-center">
-          <img src="images/youtube-logo.avif" className="w-12 h-12 mr-2" />
+          <BsYoutube className="text-4xl mr-2 text-brand" />
           <h1 className="text-xl font-medium cursor-pointer">
             <Link to="/">Youtube</Link>
           </h1>
