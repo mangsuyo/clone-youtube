@@ -13,7 +13,7 @@ export default function VideoDetail() {
     data: videoDetail,
   } = useQuery({
     queryKey: [videoId],
-    queryFn: async () => getVideoDetails(videoId),
+    queryFn: () => getVideoDetails(videoId),
   });
 
   return (

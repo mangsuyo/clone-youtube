@@ -9,7 +9,7 @@ export default function SearchVideosPage() {
   const { keyword } = useParams();
   const { isPending, error, data } = useQuery({
     queryKey: ["videos", keyword],
-    queryFn: async () => getVideoByKeyword(keyword),
+    queryFn: () => getVideoByKeyword(keyword),
   });
   return (
     <div>

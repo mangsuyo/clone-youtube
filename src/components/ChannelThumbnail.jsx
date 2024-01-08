@@ -1,17 +1,17 @@
+import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import { useState } from "react";
 import { getChannelInfo } from "../assets/api/channel";
 
 export default function ChannelThumbnail({ channelId, size }) {
-  console.log(size);
-  const [channelInfo, setChannelInfo] = useState();
-  useState(() => {
-    const fetchChannelInfo = async () => {
-      const data = await getChannelInfo(channelId);
-      setChannelInfo(data);
-    };
-    fetchChannelInfo();
-  }, []);
+  const {
+    isPending,
+    error,
+    data: channelInfo,
+  } = useQuery({
+    queryKey: [channelId],
+    queryFn: () => getChannelInfo(channelId),
+  });
   return (
     <>
       {channelInfo && (

@@ -7,7 +7,7 @@ export default function VideoDetailCard({ videoDetail }) {
   const videoId = videoDetail.items[0].id;
   const { channelId, channelTitle, title, description, publishedAt } =
     videoDetail.items[0].snippet;
-  const { viewCount, commentCount } = videoDetail.items[0].statistics;
+  const { viewCount } = videoDetail.items[0].statistics;
   const firstLine = description.split("\n")[0];
   const handleToggleClick = (event) => {
     setIsClicked((prev) => !prev);
