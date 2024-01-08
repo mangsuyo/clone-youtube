@@ -1,7 +1,8 @@
 import React from "react";
+import { useEffect } from "react";
 import { useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 export default function SearchBar({ handleSetKeyWord }) {
   const [text, setText] = useState("");
@@ -12,6 +13,12 @@ export default function SearchBar({ handleSetKeyWord }) {
     event.preventDefault();
     handleSetKeyWord(text);
   };
+
+  const { keyword } = useParams();
+
+  useEffect(() => {
+    setText(keyword || "");
+  }, [keyword]);
   return (
     <header className="px-[10%] py-[2%] mb-5">
       <div className="flex justify-between items-center">

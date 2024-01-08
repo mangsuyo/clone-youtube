@@ -5,16 +5,15 @@ import { getVideoByKeyword } from "../assets/api/videos";
 import VideoCard from "../components/VideoCard";
 
 export default function SearchVideosPage() {
-  const params = useParams();
+  const { keyword } = useParams();
   const [data, setData] = useState();
   const fetchVideoByKeyword = async (keyword) => {
     const data = await getVideoByKeyword(keyword);
     setData(data);
-    console.log(data);
   };
   useEffect(() => {
-    fetchVideoByKeyword(params.keyword);
-  }, []);
+    fetchVideoByKeyword(keyword);
+  }, [keyword]);
   return (
     <div>
       {data &&
