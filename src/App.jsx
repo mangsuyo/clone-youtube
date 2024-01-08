@@ -17,12 +17,16 @@ const router = createBrowserRouter([
         element: <Videos />,
       },
       {
-        path: "/videos/:videoId",
-        element: <VideoDetail />,
+        path: "/videos",
+        element: <Videos />,
       },
       {
         path: "/search/:keyword",
         element: <SearchVideosPage />,
+      },
+      {
+        path: "/videos/:videoId",
+        element: <VideoDetail />,
       },
     ],
   },
