@@ -1,4 +1,3 @@
-import axios from "axios";
 import { httpClient } from "./videos";
 
 export const getChannelInfo = async (channelId) => {
