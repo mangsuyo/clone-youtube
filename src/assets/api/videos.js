@@ -1,6 +1,13 @@
 import axios from "axios";
 import { httpClient, PRIVATE_KEY } from "./core";
 
+const httpClient = axios.create({
+  baseURL: "https://youtube.googleapis.com/youtube/v3",
+  params: {
+    key: PRIVATE_KEY,
+  },
+});
+
 export const getMostPopularVidoes = async () => {
   return await httpClient
     .get("videos", {
