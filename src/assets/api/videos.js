@@ -8,13 +8,6 @@ export const httpClient = axios.create({
   },
 });
 
-const httpClient = axios.create({
-  baseURL: "https://youtube.googleapis.com/youtube/v3",
-  params: {
-    key: PRIVATE_KEY,
-  },
-});
-
 export const getMostPopularVidoes = async () => {
   return await httpClient
     .get("videos", {
