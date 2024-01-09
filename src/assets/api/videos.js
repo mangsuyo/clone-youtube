@@ -3,7 +3,7 @@ import axios from "axios";
 export const httpClient = axios.create({
   baseURL: "https://youtube.googleapis.com/youtube/v3",
   params: {
-    key: PRIVATE_KEY,
+    key: "AIzaSyDSMFdf-xSds6RIe-TUYA4wvPGr2BTpQeo",
   },
 });
 
@@ -21,7 +21,7 @@ export const getMostPopularVidoes = async () => {
 };
 
 export const getVideoDetails = async (videoId) => {
-  const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${PRIVATE_KEY}`;
+  const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=AIzaSyDSMFdf-xSds6RIe-TUYA4wvPGr2BTpQeo}`;
   return await axios.get(url).then((response) => response.data);
 };
 
