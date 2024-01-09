@@ -14,6 +14,7 @@ export default function VideoDetail() {
   } = useQuery({
     queryKey: [videoId],
     queryFn: () => getVideoDetails(videoId),
+    staleTime: 1000 * 60 * 5,
   });
 
   return (

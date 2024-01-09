@@ -11,6 +11,7 @@ export default function ChannelThumbnail({ channelId, size }) {
   } = useQuery({
     queryKey: [channelId],
     queryFn: () => getChannelInfo(channelId),
+    staleTime: 1000 * 60 * 5,
   });
   return (
     <>

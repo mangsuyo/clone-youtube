@@ -1,5 +1,5 @@
 import axios from "axios";
-import { httpClient } from "./core";
+import { httpClient, PRIVATE_KEY } from "./core";
 
 export const getMostPopularVidoes = async () => {
   return await httpClient
@@ -15,14 +15,8 @@ export const getMostPopularVidoes = async () => {
 };
 
 export const getVideoDetails = async (videoId) => {
-  return await httpClient
-    .get("videos", {
-      params: {
-        part: "snippet%2CcontentDetails%2Cstatistics",
-        id: videoId,
-      },
-    })
-    .then((response) => response.data);
+  const url = `https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id=${videoId}&key=${PRIVATE_KEY}`;
+  return await axios.get(url).then((response) => response.data);
 };
 
 export const getVideoByKeyword = async (keyword) => {

@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import TimeAgo from "timeago-react";
 import ChannelThumbnail from "./ChannelThumbnail";
 
 export default function VideoCard({ video, keyword }) {
@@ -13,7 +14,7 @@ export default function VideoCard({ video, keyword }) {
   return (
     <article
       onClick={handleClickVideoCard}
-      className={`rounded-xl overflow-hidden min-w-full cursor-pointer hover:bg-gray-200 ${
+      className={`border-[1px] rounded-xl overflow-hidden min-w-full cursor-pointer hover:bg-gray-200 ${
         keyword
           ? "flex my-2 max-h-[240px] md:max-h-[220px]"
           : "relative min-h-[380px] md:min-h-[320px] lg:min-h-[280px] "
@@ -29,7 +30,7 @@ export default function VideoCard({ video, keyword }) {
           src={thumbnails.medium.url}
         />
       </div>
-      <div className={`${keyword ? "relative px-3" : ""}`}>
+      <div className={`px-2 ${keyword ? "relative px-3" : ""}`}>
         <h1 className={`mt-2 font-medium line-clamp-2 ${keyword ? "" : ""}`}>
           {title}
         </h1>
@@ -38,13 +39,15 @@ export default function VideoCard({ video, keyword }) {
             keyword ? "absolute left-2 bottom-2" : "absolute left-0 bottom-2"
           }`}
         >
-          <div className="flex items-center">
+          <div className="px-2 flex items-center">
             <ChannelThumbnail channelId={channelId} size="small" />
             <span className="font-light text-sm text-gray-800 line-clamp-1">
               {channelTitle}
             </span>
           </div>
-          <h3 className="mt-2 text-sm text-gray-400">{publishedAt}</h3>
+          <h3 className="ml-2 mt-2 text-sm text-gray-400">
+            <TimeAgo datetime={publishedAt} />
+          </h3>
         </h2>
       </div>
     </article>

@@ -10,6 +10,7 @@ export default function SearchVideosPage() {
   const { isPending, error, data } = useQuery({
     queryKey: ["videos", keyword],
     queryFn: () => getVideoByKeyword(keyword),
+    staleTime: 1000 * 60 * 1,
   });
   return (
     <div>
