@@ -1,5 +1,12 @@
 import axios from "axios";
-import { httpClient, PRIVATE_KEY } from "./core";
+import { PRIVATE_KEY } from "./core";
+
+export const httpClient = axios.create({
+  baseURL: "https://youtube.googleapis.com/youtube/v3",
+  params: {
+    key: PRIVATE_KEY,
+  },
+});
 
 const httpClient = axios.create({
   baseURL: "https://youtube.googleapis.com/youtube/v3",
