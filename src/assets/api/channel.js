@@ -1,5 +1,11 @@
 import axios from "axios";
-import { httpClient } from "./core";
+
+const httpClient = axios.create({
+  baseURL: "https://youtube.googleapis.com/youtube/v3",
+  params: {
+    key: PRIVATE_KEY,
+  },
+});
 
 export const getChannelInfo = async (channelId) => {
   return await httpClient
